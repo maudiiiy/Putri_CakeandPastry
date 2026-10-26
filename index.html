@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Putri Cake & Pastry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--cream:#FFF8F3;
+--beige:#F5E8DD;
+--dusty:#D8A7B1;
+--brown:#6D4C41;
+--brown-dark:#4E342E;
+--white:#fff;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:var(--cream);
+color:#4b3b36;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:sticky;
+top:0;
+z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 8%;
+background:rgba(255,248,243,.92);
+backdrop-filter:blur(8px);
+box-shadow:0 2px 15px rgba(0,0,0,.05);
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:28px;
+color:var(--brown);
+}
+
+nav ul{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:var(--brown);
+font-weight:500;
+}
+
+.btn{
+background:var(--dusty);
+color:white;
+padding:12px 24px;
+border-radius:30px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+background:#c98d9c;
+transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+padding:80px 8%;
+min-height:90vh;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:380px;
+height:380px;
+background:#ffe9ee;
+border-radius:50%;
+top:-120px;
+right:-100px;
+z-index:-1;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:280px;
+height:280px;
+background:#f5e6d9;
+border-radius:50%;
+bottom:-120px;
+left:-80px;
+z-index:-1;
+}
+
+.hero-text{
+flex:1;
+}
+
+.hero-text h2{
+font-size:22px;
+font-weight:400;
+color:var(--dusty);
+margin-bottom:10px;
+}
+
+.hero-text h1{
+font-family:'Playfair Display',serif;
+font-size:68px;
+line-height:1.1;
+color:var(--brown-dark);
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:17px;
+line-height:1.8;
+margin-bottom:30px;
+max-width:500px;
+}
+
+.hero-img{
+flex:1;
+text-align:center;
+position:relative;
+}
+
+.hero-img img{
+width:100%;
+max-width:420px;
+border-radius:30px;
+filter:drop-shadow(0 20px 35px rgba(0,0,0,.15));
+}
+
+/* dekorasi */
+
+.icon{
+position:absolute;
+font-size:34px;
+animation:float 4s ease-in-out infinite;
+}
+
+.icon1{top:20px;left:20px;}
+.icon2{bottom:60px;right:30px;}
+.icon3{top:120px;right:10px;}
+
+@keyframes float{
+50%{transform:translateY(-12px);}
+}
+
+/* SECTION */
+
+section{
+padding:80px 8%;
+}
+
+.title{
+font-family:'Playfair Display',serif;
+font-size:42px;
+text-align:center;
+color:var(--brown-dark);
+margin-bottom:20px;
+}
+
+.subtitle{
+text-align:center;
+color:#8b6f68;
+max-width:700px;
+margin:auto auto 50px;
+line-height:1.8;
+}
+
+/* ABOUT */
+
+.about{
+background:var(--beige);
+border-radius:35px;
+}
+
+/* PRODUCTS */
+
+.products{
+background:linear-gradient(to bottom,#FFF8F3,#F8ECE5);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:28px;
+}
+
+.card{
+background:white;
+padding:18px;
+border-radius:22px;
+box-shadow:0 12px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:16px;
+margin-bottom:15px;
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:8px;
+color:var(--brown-dark);
+}
+
+.price{
+font-size:22px;
+font-weight:bold;
+color:var(--dusty);
+margin:12px 0;
+}
+
+.desc{
+color:#777;
+line-height:1.7;
+font-size:14px;
+}
+
+/* KEUNGGULAN */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:22px;
+margin-top:35px;
+}
+
+.feature{
+background:white;
+padding:30px 20px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.feature span{
+font-size:36px;
+display:block;
+margin-bottom:12px;
+}
+
+/* TESTIMONI */
+
+.testimonials{
+background:var(--beige);
+border-radius:35px;
+}
+
+.testi-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.testi{
+background:white;
+padding:25px;
+border-radius:18px;
+line-height:1.8;
+}
+
+/* KONTAK */
+
+.contact{
+background:var(--brown-dark);
+color:white;
+border-radius:35px;
+text-align:center;
+}
+
+.contact h2{
+color:white;
+}
+
+.contact a{
+display:inline-block;
+margin:12px;
+padding:14px 24px;
+background:var(--dusty);
+color:white;
+text-decoration:none;
+border-radius:30px;
+}
+
+/* FOOTER */
+
+footer{
+padding:22px;
+text-align:center;
+background:#3b2722;
+color:white;
+margin-top:40px;
+}
+
+/* WA FLOAT */
+
+.wa{
+position:fixed;
+bottom:22px;
+right:22px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+color:white;
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+nav ul{
+display:none;
+}
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+padding-top:40px;
+}
+
+.hero-text h1{
+font-size:48px;
+}
+
+.hero-text p{
+margin:auto auto 25px;
+}
+
+.hero-img img{
+max-width:320px;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="logo">Putri Cake & Pastry</div>
+
+<ul>
+<li><a href="#beranda">Beranda</a></li>
+<li><a href="#tentang">Tentang</a></li>
+<li><a href="#produk">Produk</a></li>
+<li><a href="#kelebihan">Kelebihan</a></li>
+<li><a href="#testimoni">Testimoni</a></li>
+<li><a href="#kontak">Kontak</a></li>
+</ul>
+
+<a href="https://wa.me/6281234567890" class="btn">Order</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="beranda">
+
+<div class="hero-text">
+<h2>Freshly Baked Every Day ✨</h2>
+<h1>Sweet Moments Start Here</h1>
+
+<p>
+Nikmati cake, pastry, dan dessert premium dengan rasa lembut,
+manis yang pas, dan tampilan aesthetic untuk setiap momen spesialmu.
+</p>
+
+<a href="https://wa.me/6281234567890" class="btn">Order Sekarang</a>
+</div>
+
+<div class="hero-img">
+
+<div class="icon icon1">🧁</div>
+<div class="icon icon2">🥐</div>
+<div class="icon icon3">🍓</div>
+
+<img src="hero-cake.png" alt="Hero Cake">
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="tentang" class="about">
+
+<h2 class="title">Tentang Kami</h2>
+
+<p class="subtitle">
+Putri Cake & Pastry menghadirkan aneka cake, pastry, dan dessert
+yang dibuat menggunakan bahan premium, tanpa mengurangi kualitas rasa
+dan tampilan yang cantik. Cocok untuk hadiah, ulang tahun,
+hingga teman menikmati waktu santai.
+</p>
+
+</section>
+
+<!-- PRODUK -->
+
+<section id="produk" class="products">
+
+<h2 class="title">Our Signature Menu</h2>
+
+<p class="subtitle">
+Pilih menu favoritmu dan pesan langsung melalui WhatsApp.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<img src="cake.jpg" alt="Cake">
+<h3>Signature Cake</h3>
+<div class="price">Rp85.000</div>
+<p class="desc">
+Cake lembut dengan buttercream premium dan dekorasi elegan.
+</p>
+</div>
+
+<div class="card">
+<img src="pastry.jpg" alt="Pastry">
+<h3>Fresh Pastry</h3>
+<div class="price">Rp25.000</div>
+<p class="desc">
+Croissant dan pastry renyah dengan aroma butter yang menggoda.
+</p>
+</div>
+
+<div class="card">
+<img src="dessert.jpg" alt="Dessert">
+<h3>Sweet Dessert</h3>
+<div class="price">Rp30.000</div>
+<p class="desc">
+Dessert creamy dengan perpaduan rasa manis yang pas.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- KELEBIHAN -->
+
+<section id="kelebihan">
+
+<h2 class="title">Kenapa Harus Putri Cake & Pastry?</h2>
+
+<div class="features">
+
+<div class="feature">
+<span>🌾</span>
+Bahan Premium
+</div>
+
+<div class="feature">
+<span>🍰</span>
+Fresh Every Day
+</div>
+
+<div class="feature">
+<span>💖</span>
+Rasa Lembut
+</div>
+
+<div class="feature">
+<span>🎀</span>
+Aesthetic Look
+</div>
+
+<div class="feature">
+<span>💰</span>
+Harga Terjangkau
+</div>
+
+<div class="feature">
+<span>✨</span>
+Cocok Semua Momen
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONI -->
+
+<section id="testimoni" class="testimonials">
+
+<h2 class="title">Apa Kata Pelanggan?</h2>
+
+<div class="testi-grid">
+
+<div class="testi">
+⭐⭐⭐⭐⭐
+<br><br>
+"Cakenya lembut banget, tampilannya juga cantik!"
+<br><b>— Aulia</b>
+</div>
+
+<div class="testi">
+⭐⭐⭐⭐⭐
+<br><br>
+"Croissantnya buttery dan renyah, bakal repeat order."
+<br><b>— Nabila</b>
+</div>
+
+<div class="testi">
+⭐⭐⭐⭐⭐
+<br><br>
+"Dessertnya manisnya pas dan packagingnya aesthetic."
+<br><b>— Rina</b>
+</div>
+
+</div>
+
+</section>
+
+<!-- KONTAK -->
+
+<section id="kontak" class="contact">
+
+<h2 class="title">Order Sekarang</h2>
+
+<p>
+Hubungi kami melalui WhatsApp untuk melihat katalog lengkap
+dan melakukan pemesanan.
+</p>
+
+<a href="https://wa.me/6281234567890">💬 WhatsApp</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Putri Cake & Pastry • Made with ❤
+</footer>
+
+<a href="https://wa.me/6281234567890" class="wa">💬</a>
+
+</body>
+</html>
